@@ -1,0 +1,337 @@
+<!doctype html>  
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>reveal.js</title>
+
+		<meta name="description" content="An easy to use CSS 3D slideshow tool for quickly creating good looking HTML presentations.">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		
+		<link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/railsgirls.css">
+		<link rel="stylesheet" href="css/print.css" type="text/css" media="print">
+
+		<link rel="stylesheet" href="lib/zenburn.css">
+	</head>
+	
+  <body>
+    <header><div id='logo'><img src='images/logo.png' /></div></header>
+		
+		<div class="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <!-- / Here's a little demo content to get y'all started... -->
+<section>
+  <h1 style='padding-top: 20%'>Build Your First App</h1>
+  <h2>(Because you rock)</h2>
+</section>
+<section>
+  <h2 style='padding-top: 10%'>Tools of the Trade</h2>
+  <h3 class='icon text-editor'>Text Editor</h3>
+  <h3 class='icon terminal'>Terminal (Command Prompt)</h3>
+  <h3 class='icon browser'>Web Browser</h3>
+</section>
+<section>
+  <h2 style='padding-top: 15%'>Text Editor</h2>
+  <ul>
+    <li>Make awesome stuff by editing a series of text files</li>
+    <li><a target="_new" href="http://www.activestate.com/komodo-edit">Komodo Edit</a></li>
+    <li><a target="_new" href="https://github.com/textmate/textmate#readme">TextEdit 2</a></li>
+    <li><a target="_new" href="http://www.sublimetext.com/">SublimeText</a></li>
+  </ul>
+</section>
+<section>
+  <section>
+    <h2 style='padding-top: 20%'>Terminal</h2>
+    <p><strong>Mac:</strong> Open the Terminal application (Applications/Utilities/Terminal)</p>
+    <p><strong>Windows:</strong> <a href="http://www.computerhope.com/issues/chdos.htm">Open the Command Prompt</a></p>
+  </section>
+  <section>
+    <h2 style='padding-top: 5%'>Terminal</h2>
+    <h3>What's in this directory/folder?</h3>
+    <pre><code>$ ls
+    file1.txt
+    file2.txt</code></pre>
+    <p class='highlight'><strong>List</strong> the contents</p>
+  </section>
+  <section>
+    <h2 style='padding-top: 5%'>Terminal</h2>
+    <h3>Where am I?</h3>
+    <pre><code>$ pwd &#x000A;~/myfiles</code></pre>
+    <p class='highlight'><strong>P</strong>rint <strong>W</strong>orking <strong>D</strong>irectory</p>
+  </section>
+  <section>
+    <h2 style='padding-top: 5%'>Terminal</h2>
+    <h3>How do I get where I'm going?</h3>
+    <pre><code>$ cd app/models &#x000A;~/app/models&#x000A;$ cd ..&#x000A;~/app/</code></pre>
+    <p class='highlight'><strong>C</strong>hange <strong>D</strong>irectory</p>
+  </section>
+  <section>
+    <h2 style='padding-top: 5%'>Terminal</h2>
+    <h3><code>cd</code> Hints</h3>
+    <ul>
+      <li>The tab key is your friend!</li>
+      <li>No need to type/paste the <code>$</code></li>
+    </ul>
+  </section>
+</section>
+<section>
+  <section>
+    <h2>Building the app</h2>
+    <pre><code>$ mkdir projects</code></pre>
+    <pre><code>$ cd projects</code></pre>
+    <pre><code>$ rails new railsgirls</code></pre>
+  </section>
+  <section>
+    <h2>Building the app</h2>
+    <pre><code>$ cd railsgirls</code></pre>
+    <pre><code>$ rails server</code></pre>
+    <p>You can stop the server with <code>CTRL-C</code></p>
+  </section>
+</section>
+<section>
+  <section>
+    <h2>Keeping track of Ideas</h2>
+    <h3 style='margin-top: 100px;'>Create</h3>
+    <h3>Read</h3>
+    <h3>Update</h3>
+    <h3>Delete</h3>
+  </section>
+  <section>
+    <h2>Let's build a scaffold</h2>
+    <pre><code>$ rails generate scaffold&#x000A;idea name:string&#x000A;description:text&#x000A;picture:string</code></pre>
+    <pre><code>rake db:migrate</code></pre>
+  </section>
+  <section>
+    <h2>Let's build a scaffold</h2>
+    <pre style='margin-top: 15%'><code>rails server</code></pre>
+    <p>Now check out your handiwork: <a target="_new" href="http://localhost:3000/ideas">http://localhost:3000/ideas</a></p>
+  </section>
+</section>
+<section>
+  <section>
+    <h2>Design</h2>
+    <p>
+      <code>app/views/ideas/show.html.erb</code>
+    </p>
+    <pre><code style='font-size: 40px;'>&lt;p&gt;&#x000A;  &lt;b&gt;Name:&lt;&#x2F;b&gt;&#x000A;  &lt;%= @idea.name %&gt;&#x000A;&lt;&#x2F;p&gt;</code></pre>
+  </section>
+  <section>
+    <h2>Design</h2>
+    <p>
+      <code style='margin-left: -50px'>app/views/layouts/application.html.erb</code>
+    </p>
+    <p>Above</p>
+    <pre><code style='font-size: 35px;'>&lt;%= stylesheet_link_tag &quot;application&quot; %&gt;</code></pre>
+    <p>add</p>
+    <pre><code style='font-size: 20px;'>&lt;link rel=&quot;stylesheet&quot; href=&quot;http:&#x2F;&#x2F;railsgirls.com&#x2F;assets&#x2F;bootstrap.css&quot;&gt;</code></pre>
+  </section>
+  <section>
+    <p>and replace</p>
+    <pre><code>&lt;%= yield %&gt;</code></pre>
+    <p>with</p>
+    <pre><code>&lt;div class=&quot;container&quot;&gt;&#x000A;  &lt;%= yield %&gt;&#x000A;&lt;&#x2F;div&gt;</code></pre>
+  </section>
+  <section>
+    <p>under <code>&lt;body&gt;</code> add</p>
+    <pre><code style='font-size: 30px; line-height: 40px;'>    &lt;div class=&quot;navbar navbar-fixed-top&quot;&gt;
+      &lt;div class=&quot;navbar-inner&quot;&gt;
+        &lt;div class=&quot;container&quot;&gt;
+          &lt;a class=&quot;brand&quot; href=&quot;/&quot;&gt;The Idea app&lt;/a&gt;
+          &lt;ul class=&quot;nav&quot;&gt;
+            &lt;li class=&quot;active&quot;&gt;
+              &lt;a href=&quot;/ideas&quot;&gt;Ideas&lt;/a&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+  </section>
+  <section>
+    <p>before <code>&lt;&#x2F;body&gt;</code> add</p>
+    <pre><code style='font-size: 40px;'>    &lt;footer&gt;
+      &lt;div class=&quot;container&quot;&gt;
+        Rails Girls 2013
+      &lt;/div&gt;
+    &lt;/footer&gt;</code></pre>
+  </section>
+  <section>
+    <p>
+      <code style='margin-left: -80px'>app/assets/stylesheets/application.css</code>
+    </p>
+    <p>Add to the bottom:</p>
+    <pre><code style='font-size: 18px;'>    body { padding-top: 100px; }
+    footer { margin-top: 100px; }
+    table, td, th { vertical-align: middle !important; border: none !important; }
+    th { border-bottom: 1px solid #DDD !important; }</code></pre>
+  </section>
+</section>
+<section>
+  <section>
+    <h2>Add picture uploads</h2>
+    <p>
+      <code>Gemfile</code>
+    </p>
+    <p>Under</p>
+    <pre><code>gem 'sqlite3'</code></pre>
+    <p>add</p>
+    <pre><code>gem 'carrierwave'</code></pre>
+  </section>
+  <section>
+    <p>In the terminal, run:</p>
+    <pre><code>$ bundle</code></pre>
+    <pre><code>$ rails generate uploader Picture</code></pre>
+  </section>
+  <section>
+    <p>
+      <code>app/models/idea.rb</code>
+    </p>
+    <p>Under the line</p>
+    <pre><code style='font-size: 35px;'>class Idea &lt; ActiveRecord::Base</code></pre>
+    <p>add</p>
+    <pre><code style='font-size: 35px;'>mount_uploader :picture, PictureUploader</code></pre>
+  </section>
+  <section>
+    <p>
+      <code>app/views/ideas/_form.html.erb</code>
+    </p>
+    <p>Change</p>
+    <pre><code style='font-size: 35px;'>&lt;%= f.text_field :picture %&gt;</code></pre>
+    <p>to</p>
+    <pre><code style='font-size: 35px;'>&lt;%= f.file_field :picture %&gt;</code></pre>
+  </section>
+  <section>
+    <p>
+      <code>app/views/ideas/_form.html.erb</code>
+    </p>
+    <p>Change</p>
+    <pre><code style='font-size: 22px;'>&lt;%= form_for(@idea) do |f| %&gt;</code></pre>
+    <p>to</p>
+    <pre><code style='font-size: 22px;'>&lt;%= form_for(@idea, :html =&gt; { :multipart =&gt; true }) do |f| %&gt;</code></pre>
+  </section>
+  <section>
+    <h2 style='margin-top: 30%'>Let's <a target="_new" href="http://localhost:3000/ideas/new">check it out!!!</a></h2>
+  </section>
+  <section>
+    <p>
+      <code>app/views/ideas/show.html.erb</code>
+    </p>
+    <p>Change</p>
+    <pre><code style='font-size: 22px;'>&lt;%= @idea.picture %&gt;</code></pre>
+    <p>to</p>
+    <pre><code style='font-size: 20px;'>&lt;%= image_tag(@idea.picture_url, :width =&gt; 600) if @idea.picture.present? %&gt;</code></pre>
+  </section>
+</section>
+<section>
+  <section>
+    <h2>What's wrong with this picture?</h2>
+    <p style='margin-top: 30%;'><a target="_new" href="http://localhost:3000">http://localhost:3000</a></p>
+  </section>
+  <section>
+    <h2>Fine-tune the routes</h2>
+    <p>Mac and Linux:</p>
+    <pre><code>$ rm public/index.html</code></pre>
+    <p>Windows:</p>
+    <pre><code>del public\index.html</code></pre>
+  </section>
+  <section>
+    <p>
+      <code>config/routes.rb</code>
+    </p>
+    <p>After the first line, add:</p>
+    <pre><code style='font-size: 50px;'>root :to =&gt; redirect(&#x27;&#x2F;ideas&#x27;)</code></pre>
+  </section>
+</section>
+<section>
+  <h1 style='padding-top: 18%'>You just built an app!</h1>
+  <h2>Wasn't that easy?</h2>
+</section>
+<section>
+  <h2 style='padding-top: 10%'>Credits</h2>
+  <ul>
+    <li><a href="http://guides.railsgirls.com/app">Rails Girls Guides</a></li>
+    <li><a href="http://schneems.com/ut-rails">Richard Schneeman</a></li>
+  </ul>
+</section>
+
+			</div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+			<div class="progress"><span></span></div>
+			
+		</div>
+
+		<!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
+		<script src="lib/highlight.js"></script>
+		<script src="lib/classList.js"></script>
+		
+		<script src="js/reveal.js"></script>
+		
+		<script>
+			// Parse the query string into a key/value object
+			var query = {};
+			location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+				query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+			} );
+
+			// Fires when a slide with data-state=customevent is activated
+			Reveal.addEventListener( 'customevent', function() {
+				alert( '"customevent" has fired' );
+			} );
+
+			// Fires each time a new slide is activated
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+				// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+			} );
+
+			Reveal.initialize({
+				// Display controls in the bottom right corner
+				controls: true,
+
+				// Display a presentation progress bar
+				progress: true,
+
+				// If true; each slide will be pushed to the browser history
+				history: true,
+
+				// Loops the presentation, defaults to false
+				loop: false,
+
+				// Flags if mouse wheel navigation should be enabled
+				mouseWheel: true,
+
+				// Apply a 3D roll to links on hover
+				rollingLinks: true,
+
+				// UI style
+				theme: query.theme || 'default', // default/neon
+
+				// Transition style
+				transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
+			});
+
+			hljs.initHighlightingOnLoad();
+		</script>
+
+	</body>
+</html>

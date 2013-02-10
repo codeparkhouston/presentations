@@ -1,0 +1,369 @@
+// Here's a little demo content to get y'all started...
+
+%section
+  %h1{style:'padding-top: 20%'} Build Your First App
+  %h2 (Because you rock)
+
+
+
+%section
+  %h2{style: 'padding-top: 10%'} Tools of the Trade
+
+  %h3.icon.text-editor Text Editor
+
+  %h3.icon.terminal Terminal (Command Prompt)
+
+  %h3.icon.browser Web Browser
+
+
+
+%section
+  %h2{style: 'padding-top: 15%'} Text Editor
+
+  %ul
+    %li Make awesome stuff by editing a series of text files
+    %li= link_to 'Komodo Edit', 'http://www.activestate.com/komodo-edit', target: '_new'
+    %li= link_to 'TextEdit 2', 'https://github.com/textmate/textmate#readme', target: '_new'
+    %li= link_to 'SublimeText', 'http://www.sublimetext.com/', target: '_new'
+
+
+%section
+  %section
+    %h2{style: 'padding-top: 20%'} Terminal
+
+    %p <strong>Mac:</strong> Open the Terminal application (Applications/Utilities/Terminal)
+
+    %p= "<strong>Windows:</strong> #{ link_to 'Open the Command Prompt', 'http://www.computerhope.com/issues/chdos.htm' }"
+
+
+
+  %section
+    %h2{style: 'padding-top: 5%'} Terminal
+
+    %h3 What's in this directory/folder?
+
+    %pre
+      %code
+        $ ls
+        file1.txt
+        file2.txt
+
+    %p.highlight= '<strong>List</strong> the contents'
+
+
+
+  %section
+    %h2{style: 'padding-top: 5%'} Terminal
+
+    %h3 Where am I?
+
+    %pre
+      %code= "$ pwd \n~\/myfiles"
+
+    %p.highlight= '<strong>P</strong>rint <strong>W</strong>orking <strong>D</strong>irectory'
+
+
+
+
+  %section
+    %h2{style: 'padding-top: 5%'} Terminal
+
+    %h3 How do I get where I'm going?
+
+    %pre
+      %code= "$ cd app/models \n~/app/models\n$ cd ..\n~/app/"
+
+    %p.highlight= '<strong>C</strong>hange <strong>D</strong>irectory'
+
+
+
+  %section
+    %h2{style: 'padding-top: 5%'} Terminal
+
+    %h3= "<code>cd</code> Hints"
+
+    %ul
+      %li The tab key is your friend!
+      %li= "No need to type/paste the <code>$</code>"
+
+
+%section
+  %section
+    %h2 Building the app
+
+    %pre
+      %code
+        $ mkdir projects
+    %pre
+      %code
+        $ cd projects
+    %pre
+      %code
+        $ rails new railsgirls
+
+  %section
+    %h2 Building the app
+
+    %pre
+      %code
+        $ cd railsgirls
+
+    %pre
+      %code
+        $ rails server
+
+    %p="You can stop the server with <code>CTRL-C</code>"
+
+
+
+%section
+  %section
+    %h2 Keeping track of Ideas
+
+    %h3{style: 'margin-top: 100px;'} Create
+    %h3 Read
+    %h3 Update
+    %h3 Delete
+
+  %section
+    %h2 Let's build a scaffold
+
+    %pre
+      %code="$ rails generate scaffold\nidea name:string\ndescription:text\npicture:string"
+
+    %pre
+      %code
+        rake db:migrate
+
+
+  %section
+    %h2 Let's build a scaffold
+
+    %pre{style: 'margin-top: 15%'}
+      %code
+        rails server
+
+    %p= "Now check out your handiwork: #{link_to 'http://localhost:3000/ideas', 'http://localhost:3000/ideas', target: '_new'}"
+
+
+
+%section
+  %section
+    %h2 Design
+
+    %p
+      %code app/views/ideas/show.html.erb
+
+    %pre
+      %code{style: 'font-size: 40px;'}= escape_html "<p>\n  <b>Name:</b>\n  <%= @idea.name %>\n</p>"
+
+  %section
+    %h2 Design
+
+    %p
+      %code{style: 'margin-left: -50px'} app/views/layouts/application.html.erb
+
+    %p Above
+
+    %pre
+      %code{style: 'font-size: 35px;'}= escape_html '<%= stylesheet_link_tag "application" %>'
+
+    %p add
+
+    %pre
+      %code{style: 'font-size: 20px;'}= escape_html '<link rel="stylesheet" href="http://railsgirls.com/assets/bootstrap.css">'
+
+
+  %section
+    %p and replace
+
+    %pre
+      %code= escape_html "<%= yield %>"
+
+    %p with
+
+    %pre
+      %code= escape_html "<div class=\"container\">\n  <%= yield %>\n</div>"
+
+  %section
+    %p= "under <code>" + escape_html("<body>") + "</code> add"
+
+    %pre
+      %code{style: 'font-size: 30px; line-height: 40px;'}
+        :escaped
+              <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+              <div class="container">
+                <a class="brand" href="/">The Idea app</a>
+                <ul class="nav">
+                  <li class="active">
+                    <a href="/ideas">Ideas</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+
+  %section
+    %p= "before <code>" + escape_html("</body>") + "</code> add"
+
+
+    %pre
+      %code{style: 'font-size: 40px;'}
+        :escaped
+              <footer>
+            <div class="container">
+              Rails Girls 2013
+            </div>
+          </footer>
+
+  %section
+    %p
+      %code{style: 'margin-left: -80px'} app/assets/stylesheets/application.css
+
+    %p Add to the bottom:
+
+    %pre
+      %code{style: 'font-size: 18px;'}
+        :escaped
+              body { padding-top: 100px; }
+          footer { margin-top: 100px; }
+          table, td, th { vertical-align: middle !important; border: none !important; }
+          th { border-bottom: 1px solid #DDD !important; }
+
+
+%section
+  %section
+    %h2 Add picture uploads
+
+    %p
+      %code Gemfile
+
+    %p Under
+
+    %pre
+      %code gem 'sqlite3'
+
+    %p add
+
+    %pre
+      %code gem 'carrierwave'
+
+
+  %section
+    %p In the terminal, run:
+
+    %pre
+      %code
+        $ bundle
+    %pre
+      %code
+        $ rails generate uploader Picture
+
+
+  %section
+    %p
+      %code app/models/idea.rb
+
+    %p Under the line
+
+    %pre
+      %code{style: 'font-size: 35px;'}= escape_html "class Idea < ActiveRecord::Base"
+
+    %p add
+
+    %pre
+      %code{style: 'font-size: 35px;'} mount_uploader :picture, PictureUploader
+
+
+
+  %section
+    %p
+      %code app/views/ideas/_form.html.erb
+
+    %p Change
+
+    %pre
+      %code{style: 'font-size: 35px;'}= escape_html "<%= f.text_field :picture %>"
+
+    %p to
+
+    %pre
+      %code{style: 'font-size: 35px;'}= escape_html "<%= f.file_field :picture %>"
+
+
+  %section
+    %p
+      %code app/views/ideas/_form.html.erb
+
+    %p Change
+
+    %pre
+      %code{style: 'font-size: 22px;'}= escape_html "<%= form_for(@idea) do |f| %>"
+
+    %p to
+
+    %pre
+      %code{style: 'font-size: 22px;'}= escape_html "<%= form_for(@idea, :html => { :multipart => true }) do |f| %>"
+
+  %section
+    %h2{style: 'margin-top: 30%'}= "Let's #{link_to 'check it out!!!', 'http://localhost:3000/ideas/new', target: '_new'}"
+
+
+  %section
+    %p
+      %code app/views/ideas/show.html.erb
+
+    %p Change
+
+    %pre
+      %code{style: 'font-size: 22px;'}= escape_html "<%= @idea.picture %>"
+
+    %p to
+
+    %pre
+      %code{style: 'font-size: 20px;'}= escape_html "<%= image_tag(@idea.picture_url, :width => 600) if @idea.picture.present? %>"
+
+%section
+  %section
+    %h2 What's wrong with this picture?
+
+    %p{style: 'margin-top: 30%;'}= link_to 'http://localhost:3000', 'http://localhost:3000', :target => '_new'
+
+
+  %section
+    %h2 Fine-tune the routes
+
+    %p Mac and Linux:
+
+    %pre
+      %code $ rm public/index.html
+
+    %p Windows:
+
+    %pre
+      %code del public\index.html
+
+
+  %section
+    %p
+      %code config/routes.rb
+
+    %p After the first line, add:
+
+    %pre
+      %code{:style => 'font-size: 50px;'}= escape_html "root :to => redirect('/ideas')"
+
+
+%section
+  %h1{style:'padding-top: 18%'} You just built an app!
+  %h2 Wasn't that easy?
+
+
+%section
+  %h2{style: 'padding-top: 10%'} Credits
+
+  %ul
+    %li= link_to 'Rails Girls Guides', 'http://guides.railsgirls.com/app'
+    %li= link_to 'Richard Schneeman', 'http://schneems.com/ut-rails'

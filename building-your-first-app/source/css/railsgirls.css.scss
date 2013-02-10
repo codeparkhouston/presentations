@@ -1,0 +1,79 @@
+/* The RailsGirls presentation base CSS. */
+
+$black: #491712;
+$link: #23939b;
+
+body {
+  color: $black;
+
+  background: rgb(255,255,255); /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 14%, rgba(246,246,246,1) 59%); /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(14%,rgba(255,255,255,1)), color-stop(59%,rgba(246,246,246,1))); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 14%,rgba(246,246,246,1) 59%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 14%,rgba(246,246,246,1) 59%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 14%,rgba(246,246,246,1) 59%); /* IE10+ */
+  background: radial-gradient(ellipse at center, rgba(255,255,255,1) 14%,rgba(246,246,246,1) 59%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.reveal h1, 
+.reveal h2, 
+.reveal h3, 
+.reveal h4 {
+  color: $black;
+}
+
+.slides {
+  padding-top: 10% 0;
+
+  section {
+  }
+}
+
+
+h3.icon {
+  background-repeat: no-repeat;
+  padding-left: 75px;
+  text-align: left;
+  margin-top: 75px;
+
+  &.text-editor {
+    margin-top: 75px;
+    background-image: url(/app/images/icon-text-editor.png);
+  }
+
+  &.terminal {
+    background-image: url(/app/images/icon-browser.png);
+  }
+
+  &.browser {
+    background-image: url(/app/images/icon-prompt.png);
+  }
+}
+
+ul {
+  li {
+    margin-top: 30px;
+    text-align: left;
+  }
+}
+
+a {
+  color: $link !important;
+}
+
+p {
+  margin-top: 50px;
+
+  &.highlight {
+    strong {
+      color: $link;
+    }
+  }
+}
+
+code {
+  margin-top: 30px;
+  font-size: 60px;
+  line-height: 65px;
+}
