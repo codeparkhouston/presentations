@@ -36,27 +36,7 @@
 			
 			<!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
-        <!-- / Here's a little demo content to get y'all started... -->
-<section>
-  <h1 style='padding-top: 180px;'>Workflow</h1>
-  <h2>This is how we roll</h2>
-</section>
-<section>
-  <p style='padding-top: 200px;'>Writing badass software takes <b>discipline</b></p>
-</section>
-<section>
-  <h2>Uncle Bob says...</h2>
-  <blockquote>
-    This is where the professional draws the line... He won't get done faster if
-    he doesn't write his tests. He won't get done faster if he doesn't refactor.
-    He won't get done faster if he omits the full regression suite. Years of
-    experience have taught us that breaking disciplines only slows us down.
-  </blockquote>
-  <blockquote>
-    We move slow to move fast.
-  </blockquote>
-</section>
-
+        
 			</div>
 
 			<!-- The navigational controls UI -->
