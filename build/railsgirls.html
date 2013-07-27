@@ -1,0 +1,180 @@
+<!doctype html>  
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>reveal.js</title>
+
+		<meta name="description" content="An easy to use CSS 3D slideshow tool for quickly creating good looking HTML presentations.">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		
+		<link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/railsgirls.css">
+		<link rel="stylesheet" href="css/print.css" type="text/css" media="print">
+
+		<link rel="stylesheet" href="lib/zenburn.css">
+	</head>
+	
+  <body>
+    <header><div id='logo'><img src='images/logo.png' /></div></header>
+		
+		<div class="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <!-- / Here's a little demo content to get y'all started... -->
+<section>
+  <h1 style='padding-top: 20%'>Design and User Experience (UX)</h1>
+</section>
+<section>
+  <p style='padding-top: 200px;'>Keep your users happy with <strong>good design</strong>.</p>
+</section>
+<section>
+  <h2 style='margin-top: 10%;'>Design</h2>
+  <p style='margin-bottom: 50px;'>The aesthetics of the visual interface of your app.</p>
+  <h2>UX</h2>
+  <p>Your user's emotions while using your app.</p>
+</section>
+<section>
+  <h2>An app design process</h2>
+  <ul style='margin-top: 8%;'>
+    <li>Determine goals.</li>
+    <li>Determine your audience.</li>
+    <li>Paper prototyping.</li>
+    <li>Create mock-ups.</li>
+    <li>Build it!</li>
+  </ul>
+</section>
+<section>
+  <h2>Determine goals</h2>
+  <p style='margin-top: 20%'>What problem are you solving?</p>
+</section>
+<section>
+  <h2>Determine your audience</h2>
+  <ul style='margin-top: 15%;'>
+    <li>Which industry/demographic will your app serve?</li>
+    <li>Create user personas</li>
+    <li>Build stories for those personas</li>
+  </ul>
+</section>
+<section>
+  <section>
+    <h2>Paper prototyping</h2>
+    <img src='images/prototype.jpg' />
+  </section>
+  <section>
+    <h2>Paper prototyping</h2>
+    <ul style='margin-top: 15%'>
+      <li>Quick and easy</li>
+      <li>Not tied to any one design</li>
+      <li>Allows you to think like a user</li>
+    </ul>
+  </section>
+</section>
+<section>
+  <section>
+    <h2>Mock-ups</h2>
+    <ul>
+      <li>Pictures of an interface</li>
+      <li>Slice 'em up</li>
+      <li>Built in Photoshop nearly 100% of the time</li>
+      <li>Designers vs. builders</li>
+    </ul>
+  </section>
+</section>
+<section>
+  <section>
+    <h2>Build it!</h2>
+    <ul>
+      <li>Slice up your mock-up</li>
+      <li>Build a working prototype</li>
+      <li>Build it to throw it away</li>
+    </ul>
+  </section>
+</section>
+<section>
+  <h2>Credits</h2>
+  <ul>
+    <li>Flickr user <a target="_new" href="http://www.flickr.com/photos/rcourtie/3500124668/">rcourtie</a></li>
+  </ul>
+</section>
+
+			</div>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+			<div class="progress"><span></span></div>
+			
+		</div>
+
+		<!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
+		<script src="lib/highlight.js"></script>
+		<script src="lib/classList.js"></script>
+		
+		<script src="js/reveal.js"></script>
+		
+		<script>
+			// Parse the query string into a key/value object
+			var query = {};
+			location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+				query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+			} );
+
+			// Fires when a slide with data-state=customevent is activated
+			Reveal.addEventListener( 'customevent', function() {
+				alert( '"customevent" has fired' );
+			} );
+
+			// Fires each time a new slide is activated
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+				// event.previousSlide, event.currentSlide, event.indexh, event.indexv
+			} );
+
+			Reveal.initialize({
+				// Display controls in the bottom right corner
+				controls: true,
+
+				// Display a presentation progress bar
+				progress: true,
+
+				// If true; each slide will be pushed to the browser history
+				history: true,
+
+				// Loops the presentation, defaults to false
+				loop: false,
+
+				// Flags if mouse wheel navigation should be enabled
+				mouseWheel: true,
+
+				// Apply a 3D roll to links on hover
+				rollingLinks: true,
+
+				// UI style
+				theme: query.theme || 'default', // default/neon
+
+				// Transition style
+				transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
+			});
+
+			hljs.initHighlightingOnLoad();
+		</script>
+
+	</body>
+</html>
