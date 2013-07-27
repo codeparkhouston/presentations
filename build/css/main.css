@@ -138,7 +138,6 @@ body {
 .reveal ol, 
 .reveal ul {
 	display: inline-block;
-
 	text-align: left;
 	margin: 0 auto;
 }
@@ -211,8 +210,8 @@ body {
 
 .reveal table th, 
 .reveal table td {
- 	 text-align: left;
- 	 padding-right: .3em;
+   text-align: left;
+   padding-right: .3em;
 }
 
 .reveal table th {
